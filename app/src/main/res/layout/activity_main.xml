@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/prevButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Poprzedni"
@@ -19,10 +19,10 @@
         app:layout_constraintVertical_bias="0.746" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nastepny"
+        android:text="Następny"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.804"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.746" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/describe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pies"
@@ -43,15 +43,25 @@
         app:layout_constraintVertical_bias="0.56" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/dogImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.446"
+        app:layout_constraintVertical_bias="0.41"
         app:srcCompat="@drawable/images" />
+
+    <CheckBox
+        android:id="@+id/visibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Widzialność"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.828" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
