@@ -7,6 +7,10 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isNotEmpty
+import androidx.core.view.isVisible
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,13 +60,31 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if(visibilityCheck.isChecked) {
-            var x = View.VISIBLE
-            dogImage.visibility = x
+        visibilityCheck.setOnClickListener()
+        {
+            dogImage.isVisible = !dogImage.isVisible
         }
-        else {
-            var x = View.INVISIBLE
-            dogImage.visibility = x
+
+        var alphaInput = findViewById<TextInputEditText>(R.id.textInputEditText)
+        val alphaConfirm = findViewById<CheckBox>(R.id.alphaConf)
+
+        alphaConfirm.setOnClickListener()
+        {
+            if(alphaConfirm.isChecked) {
+                val astr = alphaInput.text.toString()
+                if (astr.isNotEmpty()) {
+                    val a = astr.toFloat()
+
+                    if (a in 0.0..255.0) {
+                        dogImage.alpha = a
+                    } else {
+                        dogImage.alpha = 1f
+                    }
+                }
+            }
+            else {
+                dogImage.alpha = 1f
+            }
         }
     }
 }
