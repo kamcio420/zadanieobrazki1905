@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         var index = 1
 
         prevButton.setOnClickListener {
-            index -= 1
             if(index in 1..5) {
+                index -= 1
                 when (index) {
                     1 -> { dogImage.setImageResource(R.drawable.gf_r5l2_jmua_ue7d_dog_niemiecki_lagodny_olbrzym_1920x1080_nocrop)
                            describe.text = "Pies1"}
@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         nextButton.setOnClickListener {
-            index += 1
             if(index in 1..5) {
+                index += 1
                 when (index) {
                     1 -> { dogImage.setImageResource(R.drawable.gf_r5l2_jmua_ue7d_dog_niemiecki_lagodny_olbrzym_1920x1080_nocrop)
                         describe.text = "Pies1"}
@@ -76,9 +76,9 @@ class MainActivity : AppCompatActivity() {
                     val a = astr.toFloat()
 
                     if (a in 0.0..255.0) {
-                        dogImage.alpha = a
+                        dogImage.alpha = a / 255f
                     } else {
-                        dogImage.alpha = 1f
+                        alphaConfirm.isChecked = false
                     }
                 }
             }
